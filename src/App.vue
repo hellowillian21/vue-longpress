@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button @click="onClick" v-longpress="onLongpress">拥有点击和长按事件</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld
+  methods: {
+    onClick() {
+      alert('点击')
+    },
+    onLongpress() {
+      alert('长按')
+    }
   }
 }
 </script>
