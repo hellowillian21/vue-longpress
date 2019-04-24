@@ -4,7 +4,7 @@ import App from './App.vue'
 Vue.config.productionTip = false
 
 Vue.directive('longpress', {
-  bind: function(el, binding) {
+  bind: function(el, binding, vnode) {
     let timer = null
     let start = function(e) {
       // 如果是点击事件，不启动计时器，直接返回
@@ -15,6 +15,7 @@ Vue.directive('longpress', {
         // 创建定时器 (2s之后执行长按功能函数)
         timer = setTimeout(function() {
           // 执行长按功能函数
+          // console.log(binding)
           binding.value()
         }, 1000)
       }
